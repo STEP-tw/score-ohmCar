@@ -17,7 +17,8 @@ const animateSnake=function() {
   if(head.isSameCoordAs(food)) {
     snake.grow();
     createFood(numberOfRows,numberOfCols);
-    drawFood(food);
+    score+=10;
+    drawFood(food,score);
   }
 }
 
@@ -61,9 +62,8 @@ const startGame=function() {
   drawGrids(numberOfRows,numberOfCols);
   drawSnake(snake);
   createFood(numberOfRows,numberOfCols);
-  drawFood(food);
+  drawFood(food,score);
   addKeyListener();
-  document.querySelector('h1').innerText='Score: ' + 0;
   animator=setInterval(animateSnake,140);
 }
 

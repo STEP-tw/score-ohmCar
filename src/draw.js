@@ -36,6 +36,11 @@ const drawSnake=function(snake) {
   paintHead(snake.getHead());
 }
 
-const drawFood=function(food) {
+const drawFood=function(food,score) {
   paintCell(food,"food");
+  getScore(score);
+}
+
+const getScore=function(score){
+  document.querySelector('h1').innerText='Score: ' + score;
 }
