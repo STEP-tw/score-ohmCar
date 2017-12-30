@@ -3,6 +3,8 @@ let food=undefined;
 let numberOfRows=60;
 let numberOfCols=120;
 
+let score=0;
+
 let animator=undefined;
 
 const animateSnake=function() {
@@ -61,6 +63,7 @@ const startGame=function() {
   createFood(numberOfRows,numberOfCols);
   drawFood(food);
   addKeyListener();
+  document.querySelector('h1').innerText='Score: ' + 0;
   animator=setInterval(animateSnake,140);
 }
 
