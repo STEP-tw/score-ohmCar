@@ -43,5 +43,5 @@ const drawFood=function(food) {
 
 const showScore=function(){
   document.querySelector('h1').innerText='Score: ' +score.getScore();
-  score.incrementScore();
+  score.incrementScore(10);
 }

@@ -6,7 +6,7 @@ Score.prototype={
   getScore: function(){
     return this.score;
   },
-  incrementScore: function(){
-    return this.score+=10;
+  incrementScore: function(incrementalValue){
+    return this.score+=incrementalValue;
   }
 }
