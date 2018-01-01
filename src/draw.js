@@ -42,4 +42,9 @@ const drawFood=function(food) {
   }else{
     paintCell(food.getPosition(),"food");
   }
+  showScore();
+}
+
+const showScore=function(){
+  document.querySelector('h1').innerText='Score: '+game.getScore();
 }
