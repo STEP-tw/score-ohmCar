@@ -36,13 +36,12 @@ const drawSnake=function(snake) {
   paintHead(snake.getHead());
 }
 
-const drawFood=function(food,score) {
+const drawFood=function(food) {
   if(food.isSuperFood()){
     paintCell(food.getPosition(),"super-food");
   }else{
     paintCell(food.getPosition(),"food");
   }
-  showScore(score);
 }
 
 const showScore=function(score){

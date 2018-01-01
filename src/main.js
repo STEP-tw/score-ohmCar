@@ -14,7 +14,8 @@ const animateSnake=function() {
     game.incrementScore(10);
     game.grow();
     game.createFood();
-    drawFood(game.getFood(),game.getScore());
+    drawFood(game.getFood());
+    showScore(game.getScore());
   }
 }
 
@@ -65,7 +66,8 @@ const startGame=function() {
   drawGrids(numberOfRows,numberOfCols);
   drawSnake(game.getSnake());
   game.createFood();
-  drawFood(game.getFood(),game.getScore());
+  drawFood(game.getFood());
+  showScore(game.getScore());
   addKeyListener();
   animator=setInterval(animateSnake,140);
 }
