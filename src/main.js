@@ -13,9 +13,16 @@ const animateSnake=function() {
   if(game.hasSnakeEatenFood()) {
     game.grow();
     game.createFood();
+    showScore();
     drawFood(game.getFood());
   }
 }
+
+const showScore=function(){
+  document.querySelector('h1').innerText='Score: '+game.getScore();
+  game.incrementScore(10);
+}
+
 
 const changeSnakeDirection=function(event) {
   switch (event.code) {
@@ -46,7 +53,6 @@ const createSnake=function() {
   let head=tail.next().next();
   snake=new Snake(head,body);
   game.addSnake(snake);
-  score=new Score();
 }
 
 const createFood=function(numberOfRows,numberOfCols) {
@@ -66,6 +72,7 @@ const startGame=function() {
   drawSnake(game.getSnake());
   game.createFood();
   drawFood(game.getFood());
+  showScore();
   addKeyListener();
   animator=setInterval(animateSnake,140);
 }

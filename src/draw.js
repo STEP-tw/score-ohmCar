@@ -42,10 +42,4 @@ const drawFood=function(food) {
   }else{
     paintCell(food.getPosition(),"food");
   }
-  showFood();
-}
-
-const showFood=function(){
-  document.querySelector('h1').innerText='Score: '+score.getScore();
-  score.incrementScore(10);
 }
