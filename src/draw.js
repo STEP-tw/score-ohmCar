@@ -36,15 +36,15 @@ const drawSnake=function(snake) {
   paintHead(snake.getHead());
 }
 
-const drawFood=function(food) {
+const drawFood=function(food,score) {
   if(food.isSuperFood()){
     paintCell(food.getPosition(),"super-food");
   }else{
     paintCell(food.getPosition(),"food");
   }
-  showScore();
+  showScore(score);
 }
 
-const showScore=function(){
-  document.querySelector('h1').innerText='Score: '+game.getScore();
+const showScore=function(score){
+  document.querySelector('h1').innerText='Score: '+score;
 }

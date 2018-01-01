@@ -14,21 +14,21 @@ const animateSnake=function() {
     game.incrementScore(10);
     game.grow();
     game.createFood();
-    drawFood(game.getFood());
+    drawFood(game.getFood(),game.getScore());
   }
 }
 
 const changeSnakeDirection=function(event) {
   switch (event.code) {
     case "KeyA":
-      game.turnLeft();
-      break;
+    game.turnLeft();
+    break;
     case "KeyD":
-      game.turnRight();
-      break;
+    game.turnRight();
+    break;
     case "KeyC":
-      game.grow();
-      break;
+    game.grow();
+    break;
     default:
   }
 }
@@ -65,8 +65,7 @@ const startGame=function() {
   drawGrids(numberOfRows,numberOfCols);
   drawSnake(game.getSnake());
   game.createFood();
-  drawFood(game.getFood());
-  showScore();
+  drawFood(game.getFood(),game.getScore());
   addKeyListener();
   animator=setInterval(animateSnake,140);
 }
